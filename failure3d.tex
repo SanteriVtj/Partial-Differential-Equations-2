@@ -1,0 +1,38 @@
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    title={2D Fundamental Solution and Delta Approximation},
+    xlabel={$x$},
+    ylabel={$y$},
+    zlabel={Function Value},
+    view={30}{50},
+    domain=-2:2,
+    y domain=-2:2,
+    samples=60,
+    samples y=60,
+    axis lines=center,
+    width=14cm,
+    height=10cm,
+    z buffer=sort,
+    colormap name=viridis,
+    legend style={at={(0.5,-0.15)}, anchor=north, legend columns=3},
+]
+
+% Mollified delta bump (compact support)
+\addplot3[surf, opacity=0.9, shader=interp, domain=-0.5:-0.01, y domain=-0.5:-0.01]
+    {4 * exp(-1/(1 - ((sqrt(x^2 + y^2)/0.5)^2)))};
+\addlegendentry{$f_\varepsilon(x, y)$ (mollifier)}
+
+% Mollified fundamental solution
+\addplot3[surf, opacity=0.6, colormap/bluered, shader=interp, domain=-0.5:-0.01, y domain=-0.5:-0.01]
+    {-1/(2*pi) * ln(sqrt(x^2 + y^2 + 0.1))};
+\addlegendentry{$u_\varepsilon(x, y)$ (smoothed)}
+
+% True fundamental solution (with cutoff at 0.01)
+\addplot3[surf, opacity=0.4, colormap/hot, shader=interp, domain=-0.5:-0.01, y domain=-0.5:-0.01]
+    {-1/(2*pi) * ln(sqrt(x^2 + y^2 + 0.01))};
+\addlegendentry{$\Phi(x, y) = -\frac{1}{2\pi} \log |x|$}
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
