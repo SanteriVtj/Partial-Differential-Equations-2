@@ -59,7 +59,7 @@
 \noindent Partial Differential Equations \RN{2}
 \end{textblock*}
 \begin{textblock*}{250mm}(.80\textwidth,-2cm)
-\noindent Santeri Väätäjä %\\ 015024877
+\noindent Santeri Väätäjä
 \end{textblock*}
 \vspace*{-2cm}
 \section*{Regularity of Elliptic Second Order Partial Differential Equations: Calder\'{o}n-Zygmund estimates}
@@ -103,7 +103,7 @@ The problem of establishing some regularity starts by having the Laplacian
     for all $v\in H^1(\Omega)$ such that $v=0$ in $\partial\Omega$.
 \end{definition}
 
-\noindent The proof for this can be treated differently for some specific values of $p$, most notably for $p=2$, which allows a more straightforward proof. It is also noteworthy that the values $1$ and $\infty$ are excluded from the formulation. In these cases, the inclusion of the solution to the $L^p$-space cannot be guaranteed. However, there exist some versions of these estimates that can be given in the case of $L^\infty$. These results are introduced in \cite{sanpera}. This requires introducing new concepts for the function space in which the result applies, namely something called a BMO space. I will not be concentrating on these estimates, but rather stick with the original bounds for $p$.
+\noindent The proof for this can be treated differently for some specific values of $p$, most notably for $p=2$, which allows a more straightforward proof. It is also noteworthy that the values $1$ and $\infty$ are excluded from the formulation. In these cases, the inclusion of the solution to the $L^p$-space cannot be guaranteed. However, there exist some versions of these estimates that can be given in the case of $L^\infty$. These results are introduced in \cite{sanpera}. This requires introducing new concepts for the function space in which the result applies, namely something called a BMO space. The BMO space is a concept that shares similarities with both Hölder and Sobolev spaces. I will not be concentrating on these estimates, but rather stick with the original bounds for $p$.
 
 To get a better idea of why the estimates hold only for such values of $p$ \cite{Fern_ndez_Real_2022} presents some examples of harmonic functions that exhibit the behavior. In the case for $p=1$, taking the mollified Dirac delta to be the example $f_\epsilon(x)=\epsilon^{-n}\eta(\frac{x}{\epsilon})$ so $f_\epsilon\in C^{\infty}$ and it converges towards the fundamental solution as $\epsilon\rightarrow0$, but that does not belong in the $W^{2,1}$.
 
@@ -118,7 +118,7 @@ To get a better idea of why the estimates hold only for such values of $p$ \cite
 
 Now we can proceed to stating the theorem and then proving it. As suggested, the theorem states that the solution $u$ is two derivatives more regular compared than the function $f$. In the context of $L^p$ this means that for $f\in L^p$ we would need the solution to belong in $W^{2,p}$. The next theorem states the exact formulation of this claim.
 
-\begin{theorem}
+\begin{theorem}\label{thm:main}
     Let $u\in H^1(B_1)$ be a weak solution to
     \begin{equation*}
         \Delta u=f\text{ in }B_1,
@@ -150,7 +150,7 @@ Let's first establish one auxiliary result for $L^p$-spaces that will be needed 
     \end{align*}
 \end{proof}
 
-\noindent From this, we can yield a corollary giving a way to represent the $L^p$ norm with respect to the sets on which the function gets values that are larger than a given constant.
+\noindent From this, we can yield a corollary that gives a way to represent the $L^p$ norm with respect to the sets on which the function gets values that are larger than a given constant.
 
 \begin{corollary}
     \begin{equation*}
@@ -161,7 +161,9 @@ Let's first establish one auxiliary result for $L^p$-spaces that will be needed 
     Let $\phi(t)=t^p$ and $d\nu(t)=pt^{p-1}$, then the integral is acquired by the change of variables.
 \end{proof}
 
-\noindent This implies that for the norm to be finite, measures of sets $\{x\in\Omega|\,|u(x)|>\lambda\}$ have to shrink as the $\lambda\rightarrow\infty$. For the coming, I will be denoting the normal Lebesgue measure as $|\cdot|$.
+\noindent This implies that for the norm to be finite, measures of sets $\{x\in\Omega|\,|u(x)|>\lambda\}$ have to shrink as the $\lambda\rightarrow\infty$. From now on, I will denote the normal Lebesgue measure as $|\cdot|$.
+
+Now we would like to use this result to prove a tail estimate for the norms of $u$ and $f$ that would lead us to a similar inequality given in the theorem \ref{thm:main}.
 
 \clearpage
 \printbibliography
