@@ -82,8 +82,6 @@ These, unlike Schauder estimates, consider functions in $L^p$-space, so unlike i
 
 I will be restricting the forthcoming analysis to consider only the case where the domain of the Laplacian is assumed to be $\Omega=B_1$, following the analysis done in \cite{covi,Fern_ndez_Real_2022} and \cite{sanpera} which I will be be primarily following on the proofs for Calder\'{o}n-Zygmund estimates. It would be possible to extend the analysis to cover a broader family of domains than the unit ball, but the restriction is made in order to restrict the complexity of the analysis.
 
-\subsection*{Formalization of the Problem}
-
 The problem of establishing some regularity starts by having the Laplacian
 
 \begin{gather}\label{eq:laplacian}
@@ -143,7 +141,7 @@ In what follows, I will take the $L^2$ estimate as given and restrict the proof 
     Where $C$ depends only on the dimension.
 \end{theorem}
 
-Let's first establish some auxiliary result for $L^p$-spaces that will be needed to begin the proof for the main result. 
+Let's first establish some auxiliary results for $L^p$-spaces that will be needed to begin the proof of the main result. 
 
 \begin{proposition}
     Let $(X,\mathcal{F},\mu)$ be a measure space. Let $\nu$ be a Borel measure on $[0,\infty)$ and $f\in\mathcal{M}_+$. For $\lambda,t\geq0$, set
@@ -243,7 +241,7 @@ According to the weak type estimate the inequality in theorem \ref{thm:weak}, th
     |B_1\cap\{\mathcal{M}|D^2u|^2>\lambda_0^2\}|\leq\epsilon(|B_1\{\mathcal{M}|D^2u|^2>1\}|+|B_1\cap\{\mathcal{M}|f|^2>\delta^2\}|)
 \end{equation*}
 
-We still need one more substantial auxiliary result that will help to control the measure of the functions within the given disjoint sets. This can be done by using the Vitali covering lemma. However, the original version is not sufficient for this use. Therefore, we need a modified version of the original lemma. I will first state the infinite version of the original lemma.
+We still need some more auxiliary results that will help to control the measure of the functions within the given disjoint sets. This can be done by using the Vitali covering lemma. However, the original version is not sufficient for this use. Therefore, we need a modified version of the original lemma. I will first state the infinite version of the original lemma.
 
 \begin{lemma}
     Let $\mathcal{F}$ be any collection of balls in a separable metric space such that
@@ -304,7 +302,7 @@ Next, we'll have a result of all harmonic functions. It is a result on the regul
     For any $B_r(x_0)\subset\Omega$ there is a Poisson kernel representation. Since the Poisson integral is smooth $u\in C^\infty(B_{r/2}(x_0))$ and the estimate holds. As the same can be done to any ball $B_r(x_0)\subset\Omega$, $u$ is $C^\infty$ everywhere inside $\Omega$.
 \end{proof}
 
-Now we have all of the necessary auxiliary results to start proving the inequality \ref{eq:ineq}. The first step towards proving the theorem \ref{thm:main} will be to prove the following lemma.
+Now we have all of the necessary auxiliary results to start proving the results that are used to get the inequality \ref{eq:ineq}. The first step towards proving the theorem \ref{thm:main} will be to prove the following lemma.
 
 \begin{lemma}\label{lemma:first-main}
     Assume $u$ is a solution of \ref{eq:laplacian} in a domain $\Omega\supset B_4$. Then there exist a constant $N_1$ such that for any $\epsilon>0$ there exists a $\delta(\epsilon)>0$ so that if:
